@@ -16,6 +16,7 @@
     "url": "https://github.com/Champii/LiveShell/issues"
   },
   "dependencies": {
-    "blessed": "^0.1.81"
+    "blessed": "^0.1.81",
+    "prelude-ls": "^1.1.2"
   }
 }

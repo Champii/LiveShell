@@ -7,7 +7,7 @@ Functionnal Shell developed with LiveScript
 rename = -> mv it, it + \_tmp
 
 ls /bin
-|> filter (.[to 2] is 'bin')
+|> filter (.[to 2] is \bin)
 |> map rename
 
 -------------------------------
