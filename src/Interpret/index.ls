@@ -14,7 +14,6 @@ class Interpret
       done = ->
 
     child.on \error -> done \error
-    # child.on \close -> done 'close'
 
     child.stdout.on \data -> done null, it.toString!
     child.stderr.on \data -> done it.toString!
