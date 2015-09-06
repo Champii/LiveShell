@@ -1,6 +1,8 @@
 require! {
   blessed
-  \./Input/Prompt
+  \./Prompt
+  \./Interpret
+  \./Output
 }
 
 class LiveShell
@@ -15,7 +17,21 @@ class LiveShell
         shape: \block
         color: null
 
-    @prompt = new Prompt @screen
+    @main = blessed.box do
+      parent: @screen
+      left: 0
+      top: 0
+      width: @screen.width
+      height: @screen.height
+
+    @prompt = new Prompt @screen, @main
+    @interpret = new Interpret @screen, @main
+    @output = new Output @screen, @main
+
+    @prompt.on \changed ~>
+      @output.Set! if not it.length
+      @interpret.Run it, (err, stdout) ~>
+        @output.Set err || stdout
 
     @screen.render!
 

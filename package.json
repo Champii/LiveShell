@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "blessed": "^0.1.81",
+    "livescript": "^1.4.0",
     "prelude-ls": "^1.1.2"
   }
 }
