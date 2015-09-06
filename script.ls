@@ -4,6 +4,6 @@ ls = -> []
 mv = -> []
 rename = -> mv it, it + \_tmp
 
-ls \/bin
+ls \/tmp
 |> filter (.[to 2] is \bin)
 |> map rename

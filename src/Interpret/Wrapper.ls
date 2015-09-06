@@ -3,7 +3,7 @@ wrapper = '''
     fs
     path
   }
-  
+
   global import require \\prelude-ls
   global import require \\lish-std
 
