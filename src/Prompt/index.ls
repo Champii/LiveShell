@@ -12,6 +12,7 @@ class Prompt extends EventEmitter
   Init: ->
     @keyboad = new Keyboard @screen
     @cursor = new Cursor @screen, @
+    
     @text = blessed.text do
       parent: @main
       top: 0

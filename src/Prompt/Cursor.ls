@@ -8,9 +8,9 @@ class Cursor
 
   Init: ->
     @program = @screen.program
-    # @program.cursorDown!
-    # @program.cursorForward!
+
     @screen.program.showCursor!
+
     @screen.on \keypress (key, obj) ~>
       | key?.length and \ch of obj                                       => @program.cursorForward!
       | key?.length and obj.name?.length is 1                            => @program.cursorForward!
@@ -18,6 +18,7 @@ class Cursor
       | obj.name is \right and @program.x < @prompt.text.content.length  => @program.cursorForward!
       | obj.name is \backspace                                           => @program.cursorBackward!
       | obj.name is \left                                                => @program.cursorBackward!
+      | obj.name is \enter                                               => @program.cursorDown!
       @screen.render!
 
 module.exports = Cursor
