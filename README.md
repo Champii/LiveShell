@@ -31,6 +31,12 @@ is-file         :: Path       -> Booleen
 is-dir          :: Path       -> Booleen
 grep-file       :: Pattern    -> FilePath   -> [String]
 ls-path         :: Path       -> [Path]
+
+# Git related
+git-branch      :: void       -> String
+pull            :: String     -> [String]
+push            :: String     -> [String]
+commit          :: String     -> [String]
 ```
 
 ## Exemples

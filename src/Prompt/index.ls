@@ -12,7 +12,7 @@ class Prompt extends EventEmitter
   Init: ->
     @keyboad = new Keyboard @screen
     @cursor = new Cursor @screen, @
-    
+
     @text = blessed.text do
       parent: @main
       top: 0
@@ -23,6 +23,7 @@ class Prompt extends EventEmitter
       | key?.length and \ch of obj            => @Append obj.ch
       | key?.length and obj.name?.length is 1 => @Append key
       | obj.name is \space                    => @Append ' '
+      | obj.name is \enter                    => @emit \run @Get!
       | obj.name is \backspace                =>
         x = @cursor.program.x
         switch
@@ -33,12 +34,12 @@ class Prompt extends EventEmitter
 
   Set:    ->
     @text.setContent it
-    @emit \changed @Get!
+    # @emit \changed @Get!
 
   Append: ->
     x = @cursor.program.x
     @text.setContent @Get![til x]*'' + it + @Get![x to]*''
-    @emit \changed @Get!
+    # @emit \changed @Get!
 
   Get: ->
     @text.getContent!

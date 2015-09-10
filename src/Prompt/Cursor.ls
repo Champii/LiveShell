@@ -18,7 +18,7 @@ class Cursor
       | obj.name is \right and @program.x < @prompt.text.content.length  => @program.cursorForward!
       | obj.name is \backspace                                           => @program.cursorBackward!
       | obj.name is \left                                                => @program.cursorBackward!
-      | obj.name is \enter                                               => @program.cursorDown!
+      # | obj.name is \enter                                               => @program.cursorDown!
       @screen.render!
 
 module.exports = Cursor
