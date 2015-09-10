@@ -36,8 +36,11 @@ ls-path         :: Path       -> [Path]
 ## Exemples
 
 ```livescript
-# Get every filenames with length > 10
-ls! |> filter (.length > 10)
+# Useless. Here pwd! returns an Array so we take first item
+ls head pwd!
+
+# Equals
+ls pwd!0
 ```
 
 ```livescript
