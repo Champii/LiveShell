@@ -1,6 +1,5 @@
 wrapper = '''
   require! {
-    fs
     path
   }
 

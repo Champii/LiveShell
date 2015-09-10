@@ -4,27 +4,69 @@ Functionnal Shell developed with LiveScript
 ## Features
 
 - Livescript evaluation
-- Live output
+- Live output (Evaluation as you type)
 - Each binary in `$PATH` is wrapped (ls, cat, head, ...)
   - Their output are Arrays so you can chain them
 ```livescript
-ls!
-|> filter (.length > 10)
+      ls! |> filter (.length > 10)
 ```
   - You can pass them an array to make it easy
 ```livescript
-ls <[-a /home]>
-|> map (-> it is \.. => \Parent else it)
+      grep <[-rn console.log .]>
 ```
 - Preloaded `prelude-ls` and `fs`
+- `fs` function are pre-curryfied
+
+
+## Builtins:
+
+```livescript
+# Std
+string-contains :: Pattern    -> String     -> Booleen
+
+# File related
+cd              :: FolderPath -> void
+sizeof          :: Path       -> void
+is-file         :: Path       -> Booleen
+is-dir          :: Path       -> Booleen
+grep-file       :: Pattern    -> FilePath   -> [String]
+ls-path         :: Path       -> [Path]
+```
+
+## Exemples
+
+```livescript
+# Get every filenames with length > 10
+ls! |> filter (.length > 10)
+```
+
+```livescript
+# Get every filenames with length > 10
+ls! |> filter (.length > 10)
+```
+
+```livescript
+# Get file name of files that contain 'require'
+grep <[-rn require .]>
+  |> map split(\:) >> (.0)
+  |> unique
+```
+
+```livescript
+# Get every lines that have 'error' in /var/log
+ls-path \/var/log
+  |> filter is-file
+  |> map grep-file \error
+```
+
 ## Goals
 
 ```livescript
 rename = -> mv it, it + \_tmp
 
 ls \/bin
-|> filter (.[to 2] is \bin)
-|> map rename
+  |> filter (.[to 2] is \bin)
+  |> map rename
 
 -------------------------------
 

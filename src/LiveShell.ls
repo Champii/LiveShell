@@ -3,6 +3,7 @@ require! {
   \./Prompt
   \./Interpret
   \./Output
+  \underscore : __
 }
 
 class LiveShell
@@ -28,10 +29,11 @@ class LiveShell
     @interpret = new Interpret @screen, @main
     @output = new Output @screen, @main
 
-    @prompt.on \changed ~>
+    @prompt.on \changed __.throttle ~>
       @output.Set! if not it.length
       @interpret.Run it, (err, stdout) ~>
         @output.Set err || stdout
+    , 1000
 
     @screen.render!
 
