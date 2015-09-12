@@ -34,12 +34,12 @@ class Prompt extends EventEmitter
 
   Set:    ->
     @text.setContent it
-    # @emit \changed @Get!
+    @emit \changed @Get!
 
   Append: ->
     x = @cursor.program.x
     @text.setContent @Get![til x]*'' + it + @Get![x to]*''
-    # @emit \changed @Get!
+    @emit \changed @Get!
 
   Get: ->
     @text.getContent!
