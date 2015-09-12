@@ -4,7 +4,7 @@ wrapper = '''
   }
 
   global import require \\prelude-ls
-  global import require \\./src/Helpers
+  global import require \\../lib/Helpers
 
   ___res___ = do ->
     goesHere

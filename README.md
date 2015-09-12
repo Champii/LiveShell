@@ -7,12 +7,13 @@ Functionnal Shell developed with LiveScript
 
 ## Usage
 
-    npm install -g lish
+    > npm install -g lish
+    > lish
 
 Or
 
-    git clone https://github.com/Champii/LiveShell.git && cd LiveShell
-    node .
+    > git clone https://github.com/Champii/LiveShell.git && cd LiveShell
+    > ./bin/lish
 
 ## Features
 
