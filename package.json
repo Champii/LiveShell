@@ -1,6 +1,6 @@
 {
   "name": "lish",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Shell with livescript",
   "main": "index.js",
   "bin": {
