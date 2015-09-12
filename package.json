@@ -1,10 +1,10 @@
 {
   "name": "lish",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Shell with livescript",
   "main": "index.js",
   "bin": {
-    "lish": "./index.js"
+    "lish": "./bin/index.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
