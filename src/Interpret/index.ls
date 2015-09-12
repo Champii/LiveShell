@@ -18,6 +18,8 @@ class Interpret
     child.stdout.on \data -> done null, it.toString!
     child.stderr.on \data -> done it.toString!
 
+    child.stdout.on \error -> done \error_stdout
+    child.stdin.on \error -> done \error_stdin
     child.stdin.write string
 
 module.exports = Interpret

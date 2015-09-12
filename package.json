@@ -1,5 +1,5 @@
 {
-  "name": "LiveShell",
+  "name": "liveshell",
   "version": "0.0.1",
   "description": "Shell with livescript",
   "main": "index.js",
