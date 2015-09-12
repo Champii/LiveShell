@@ -1,5 +1,18 @@
 # LiveShell
+
+Codename: `lish`
+
+
 Functionnal Shell developed with LiveScript
+
+## Usage
+
+    npm install -g lish
+
+Or
+
+    git clone https://github.com/Champii/LiveShell.git && cd LiveShell
+    node .
 
 ## Features
 
