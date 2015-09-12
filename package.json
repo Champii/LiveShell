@@ -1,8 +1,11 @@
 {
-  "name": "liveshell",
+  "name": "lish",
   "version": "0.0.1",
   "description": "Shell with livescript",
   "main": "index.js",
+  "bin": {
+    "lish": "./index.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -11,7 +14,7 @@
     "url": "https://github.com/Champii/LiveShell.git"
   },
   "author": "",
-  "license": "GNUV2",
+  "license": "GNUv2",
   "bugs": {
     "url": "https://github.com/Champii/LiveShell/issues"
   },
