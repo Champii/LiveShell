@@ -1,3 +1,7 @@
-#!/usr/bin/env node
+#!/usr/bin/env bash
 
-require('../')
+cd `dirname $BASH_SOURCE`
+LOL=`readlink $BASH_SOURCE`
+cd `dirname $LOL`
+cd ..
+node .

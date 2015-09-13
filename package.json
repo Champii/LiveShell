@@ -20,6 +20,7 @@
   },
   "dependencies": {
     "blessed": "^0.1.81",
+    "lish-std": "0.0.1",
     "livescript": "^1.4.0",
     "prelude-ls": "^1.1.2",
     "underscore": "^1.8.3"
