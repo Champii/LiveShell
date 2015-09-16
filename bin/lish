@@ -4,4 +4,4 @@ cd `dirname $BASH_SOURCE`
 LOL=`readlink $BASH_SOURCE`
 cd `dirname $LOL`
 cd ..
-node .
+node . $1
