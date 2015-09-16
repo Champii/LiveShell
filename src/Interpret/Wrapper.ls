@@ -9,7 +9,8 @@ wrapper = '''
   ___res___ = do ->
     goesHere
 
-  console.log that if ___res___?
+  # console.log that if ___res___?
+  process.exit 0
 '''
 
 module.exports = ->

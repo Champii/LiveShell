@@ -13,9 +13,12 @@ Functionnal Shell developed with LiveScript
 Or
 
     > git clone https://github.com/Champii/LiveShell.git && cd LiveShell
-    > ./bin/lish
+    > node .
 
-You can use `--live` argument to make it evaluate as you type.
+`lish [[--live] | [filename]]`
+
+You can use `--live` argument to make it evaluate as you type, or give a file to execute.
+
 
 #### /!\ Warning
 With the `--live` argument: As the shell input is auto-processed every second, be carefull to what you type in. This can lead to various errors and can make your filesystem messy if you don't handle it carefully.

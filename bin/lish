@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-
 cd `dirname $BASH_SOURCE`
 LOL=`readlink $BASH_SOURCE`
 cd `dirname $LOL`
