@@ -34,7 +34,9 @@ class LiveShell
       @interpret.Run it, (err, stdout) ~>
         @output.Set err || stdout
 
-    @prompt.on \changed __.throttle evaluate, 1000
+    if process.argv[2] is \--live
+      @prompt.on \changed __.throttle evaluate, 1000
+
     @prompt.on \run evaluate
 
     @screen.render!

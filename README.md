@@ -15,6 +15,11 @@ Or
     > git clone https://github.com/Champii/LiveShell.git && cd LiveShell
     > ./bin/lish
 
+You can use `--live` argument to make it evaluate as you type.
+
+#### /!\ Warning
+With the `--live` argument: As the shell input is auto-processed every second, be carefull to what you type in. This can lead to various errors and can make your filesystem messy if you don't handle it carefully. 
+
 ## Features
 
 - Livescript evaluation
@@ -30,23 +35,6 @@ Or
 ```
 - Preloaded `prelude-ls` and `fs`
 - `fs` function are pre-curryfied
-
-#### /!\ Warning
-As the shell input is auto-processed every second, be carefull to what you type in. This can lead to various errors and can make your filesystem messy if you don't handle it carefully. To remove this behaviour, you can comment following lines emitting 'changed' event in `./src/Prompt/index.ls`:
-
-```livescript
-Set:    ->
-  @text.setContent it
-  # @emit \changed @Get!
-
-Append: ->
-  x = @cursor.program.x
-  @text.setContent @Get![til x]*'' + it + @Get![x to]*''
-  # @emit \changed @Get!
-
-```
-
-Doing so, you have to press `enter` to execute a command.
 
 ## Builtins:
 
